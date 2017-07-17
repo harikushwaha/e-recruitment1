@@ -1,0 +1,12 @@
+{
+  "ENV" : "Product",
+  "AUTH_SERVER_BASE_URL" : "//XpressionAuthServer",
+  "XPRESSION_SERVER_BASE_URL" : "//XpressionServer",
+  "HUB" : "xpressionHub",
+  "CLIENT_ID" : "Xpression Web Client",
+  "SIGNAL_R_CONNECTION_TIMEOUT" : 30000,
+  "SESSION_TIMEOUT" : 900000,
+  "SCREENSHOT_TIMEOUT" : 2000,
+  "SCREENSHOT_WIDTH" : "640",
+  "SCREENSHOT_HEIGHT" : "0"
+}

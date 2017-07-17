@@ -1,0 +1,12 @@
+{
+  "ENV":"Dev",
+  "AUTH_SERVER_BASE_URL": "http://localhost:51973",
+  "XPRESSION_SERVER_BASE_URL": "http://localhost:60191",
+  "HUB": "xpressionHub",
+  "CLIENT_ID" : "Xpression Web Client",
+  "SIGNAL_R_CONNECTION_TIMEOUT" : 30000,
+  "SESSION_TIMEOUT": 900000,
+  "SCREENSHOT_TIMEOUT": 2000,
+  "SCREENSHOT_WIDTH" : "640",
+  "SCREENSHOT_HEIGHT" : "0"
+}
