@@ -18,9 +18,8 @@
         function login() {
              alert(AUTH_SERVER_BASE_URL);
             vm.dataLoading = true;
-            debugger;
+            
             AuthenticationService.Login(vm.username, vm.password, function (response) {
-                debugger;
                 if (response.success) {
                     AuthenticationService.SetCredentials(vm.username, vm.password);
                     $location.path('/');
@@ -29,7 +28,6 @@
                     vm.dataLoading = false;
                 }
             });
-            debugger;
         };
     }
 

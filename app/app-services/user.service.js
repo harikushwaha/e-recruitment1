@@ -7,7 +7,6 @@
 
     UserService.$inject = ['$http','AUTH_SERVER_BASE_URL'];
     function UserService($http,AUTH_SERVER_BASE_URL) {
-        debugger;
         alert(AUTH_SERVER_BASE_URL);
         var service = {};
 

@@ -8,7 +8,6 @@
     HomeController.$inject = ['UserService', '$rootScope'];
     function HomeController(UserService, $rootScope) {
         var vm = this;
-        debugger;
         vm.user = null;
         vm.allUsers = [];
         vm.deleteUser = deleteUser;
