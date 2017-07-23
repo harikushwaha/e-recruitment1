@@ -52,88 +52,43 @@
 
 
 
-            // this
-            // $http.post(AUTH_SERVER_BASE_URL+'/token')
-            // .success(function(data, status, headers, config) {
-            //     $scope.movieContent = data;
-            // },function(errors1){
-
-            // });
-
-            // is the same as
-            // var promise = $http.post(AUTH_SERVER_BASE_URL+'/token');
-
-            // promise.then(
-            // function(payload) {
-            //     $scope.movieContent = payload.data;
-            // },function(error1){
-            //     $scope.error1 = error1;
-            // });
-            //let data1='grant_type=password&username=hari.itsolution1@gmail.com&password=krishan123&client_id=ngAuthApp1&client_secret=Secret'
-
             var headers = new Headers();
             headers.append('Content-Type', 'application/x-www-form-urlencoded');
-            // headers.append('Access-Control-Allow-Origin', '*');
-            // headers.append('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+            headers.append('Access-Control-Allow-Origin', '*');
+            
 
             console.log(JSON.stringify(userData));
             var tokenUrl=AUTH_SERVER_BASE_URL+'/token';
             var deferred = $q.defer();
 
-            // $http({
-            //     method: 'POST',
-            //     url: tokenUrl,
-            //     data: vm.userData,
-            // }).success(function (data, status, headers, cfg) {
-            //     // save the access_token as this is required for each API call. 
-            //     var accessToken = data.access_token;
-            //     // check the log screen to know currently back from the server when a user log in successfully.
-            //     console.log(data);
-            //     deferred.resolve(data);
-            // }).error(function (err, status) {
-            //     console.log(err);
-            //     deferred.reject(status);
-            // });
 
 
-        //     $http({
-        //         method: 'POST',
-        //         headers :headers,
-        //         url: tokenUrl,
-        //         //headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-        //         data: JSON.stringify(userData)
+ var data = "grant_type=password&username=" + username + "&password=" + password + "&client_id=ngAuthApp1&client_secret=Secret";
+         var data1="grant_type=password&username=hari.itsolution1@gmail.com&password=krishan123&client_id=ngAuthApp1&client_secret=Secret";
 
-        //     }).then(function(response) {
-        //         debugger;
-        //         return response.data;
-        //     }, function(error) {
-        //         debugger;
-        //         if(error && error.data){
-        //         $rootScope.errorMessage = error.data.error;
-        //         return $q.reject($filter('translate')('loginError'));
-        //     }
-        // });
-        
-         var data = "grant_type=password&username=" + username + "&password=" + password + "&client_id=ngAuthApp1&client_secret=Secret";
         console.log(data);
-        // if (loginData.useRefreshTokens) {
-        //     data = data + "&client_id=" + ngAuthSettings.clientId;
-        // }
-         $http.post(tokenUrl, data, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }).then(function(response){
-            debugger;
-         },function(error){
-            debugger;
-         })
-
-    //     var dt=$http.defaults.headers;
-    //    $http.defaults.headers.common.Accept = 'application/x-www-form-urlencoded';
-    //    $http.defaults.headers.common.Authorization = 'Bearer';
 
 
-        //$http.post(tokenUrl , userData).then(handleSuccess, handleError('Error updating user'));
+         $http.post(tokenUrl, data, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }).then(function (response) {
+debugger;
+            // if (loginData.useRefreshTokens) {
+            //     localStorageService.set('authorizationData', { token: response.access_token, userName: loginData.userName, refreshToken: response.refresh_token, useRefreshTokens: true });
+            // }
+            // else {
+            //     localStorageService.set('authorizationData', { token: response.access_token, userName: loginData.userName, refreshToken: "", useRefreshTokens: false });
+            // }
+            // _authentication.isAuth = true;
+            // _authentication.userName = loginData.userName;
+            // _authentication.useRefreshTokens = loginData.useRefreshTokens;
+            console.log(response);
+             deferred.resolve(response);
+             callback(response);
 
-        debugger;
-            
+        },function (err, status) {
+            //_logOut();
+            deferred.reject(err);
+        });
+
 
     }
     

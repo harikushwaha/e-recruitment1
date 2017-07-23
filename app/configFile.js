@@ -12,7 +12,7 @@
  ******************************************************************************/
 angular.module('AppConfig', [])
  .constant('ENV', 'Dev')
-  .constant('AUTH_SERVER_BASE_URL', 'http://10.131.40.100/BantamConnectService')
+  .constant('AUTH_SERVER_BASE_URL', 'http://192.168.1.4/BantamConnectService')
   .constant('XPRESSION_SERVER_BASE_URL', 'http://10.181.121.196//XpressionServer')
   .constant('NEW_AUTH_SERVER_BASE_URL', 'http://10.181.121.196/AuthenticationService')
   .constant('HUB', 'xpressionHub')
